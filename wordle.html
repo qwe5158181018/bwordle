@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html style="height : 100vh;width : 100vw;">
+
+<head>
+	<meta charset="utf-8" name="viewport">
+	<title>qwewordle</title>
+	<style>
+		@import url("wordle.css");
+	</style>
+</head>
+
+<body style="height : 100vh;width:100vw;" onload="init()">
+	<div id="textbox">
+		<div style="text-align:center;width:100%;">
+			<span id="letterContainer"></span>
+		</div>
+	</div>
+	<div id="results">
+		<table id="results-table">
+		</table>
+	</div>
+	<div id="keyboard">
+		<div style="text-align:center;width:100%;" class="key-row"><span id='q' class="keys">q</span><span id='w'
+				class="keys">w</span><span id='e' class="keys">e</span><span id='r' class="keys">r</span><span id='t'
+				class="keys">t</span><span id='y' class="keys">y</span><span id='u' class="keys">u</span><span id='i'
+				class="keys">i</span><span id='o' class="keys">o</span><span id='p' class="keys">p</span><span
+				id='backspace' class="keys">⌫</span></div>
+		<div style="text-align:center;width:100%;" class="key-row"><span id='a' class="keys">a</span><span id='s'
+				class="keys">s</span><span id='d' class="keys">d</span><span id='f' class="keys">f</span><span id='g'
+				class="keys">g</span><span id='h' class="keys">h</span><span id='j' class="keys">j</span><span id='k'
+				class="keys">k</span><span id='l' class="keys">l</span><span id="enter" class="keys">↵</span></div>
+		<div style="text-align:center;width:100%;" class="key-row"><span id='z' class="keys">z</span><span id='x'
+				class="keys">x</span><span id='c' class="keys">c</span><span id='v' class="keys">v</span><span id='b'
+				class="keys">b</span><span id='n' class="keys">n</span><span id='m' class="keys">m</span></div>
+	</div>
+	<div id="attr">
+		<div id="buttons">
+			<button id="newGame" onclick="restart()">新游戏</button><button id="showAnswer"
+				onclick="showAns()">显示答案</button>
+			<button id="quickInput" onclick="quickInput()">快捷填入</button>
+		</div>
+		<div id="lengthInput">
+			<label for="length">单词长度:</label>
+			<input id="length" name="length" type="number" placeholder="输入3~15的数字" onchange="lengthChange()" value="5">
+		</div>
+		<span id="correctAnswer">正确答案：</span><br>
+		<br>
+		<span id="tryTimes">尝试次数:</span><br>
+		<div id="errors"></div>
+	</div>
+</body>
+<script src="wordslib.js"></script>
+<script src="main.js"></script>
+
+</html>
